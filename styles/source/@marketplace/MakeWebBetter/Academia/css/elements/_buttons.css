@@ -1,0 +1,139 @@
+/****************************************/
+/*            Global Button CSS         */
+/****************************************/
+
+.ac-button {
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  height: auto;
+  line-height: 24px;
+  margin: 0;
+  padding: 10px 20px;  
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s linear all;
+  white-space: normal;
+  width: auto;
+  word-break: break-word;
+}
+
+.ac-button:hover {
+  transition: 0.3s linear all;
+}
+
+/****************************************/
+/*            Filled Button            */
+/****************************************/
+
+.ac-button--filled {
+  background: #6E41E2;
+  border: 2px solid #6E41E2;
+  color: #ffffff;
+}
+
+.ac-button--filled:hover {
+  background: #5835B0;
+  border-color: #5835B0;
+}
+
+.ac-button--filled:active {
+  background: #472C8A;
+  border-color: #472C8A;
+}
+
+.ac-button--filled:disabled {
+  background: #E3DAF9;
+}
+
+.ac-button--filled:focus {
+  background: #6E41E2;
+  border-color: #6E41E2;
+}
+
+/****************************************/
+/*            Outlined Button           */
+/****************************************/
+
+.ac-button--outlined {
+  background: transparent;
+  border: 2px solid #6E41E2;
+  color: #6E41E2;
+}
+
+.ac-button--outlined:hover {
+  background: rgba(110,65,226,0.04);
+}
+
+.ac-button--outlined:active {
+  background: rgba(110,65,226,0.16);
+}
+
+.ac-button--outlined:disabled {
+  opacity: 0.56;
+}
+
+.ac-button--outlined:focus {
+  border-color: rgba(17,17,17,0.48);
+}
+
+/****************************************/
+/*            Filled Button Dark         */
+/****************************************/
+
+.ac-button--filled-dark {
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  color: #6E41E2;
+}
+
+.ac-button--filled-dark:hover {
+  background: #ffffff;
+}
+
+.ac-button--filled-dark:active {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.ac-button--filled-dark:disabled {
+  background: #fff;
+}
+
+.ac-button--filled-dark:focus {
+  background: #fff;
+  border-color: #fff;
+}
+
+/****************************************/
+/*            Outlined Button Dark       */
+/****************************************/
+
+.ac-button--outlined-dark {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.ac-button--outlined-dark:hover {
+  background: rgba(110,65,226,0.04);
+}
+
+.ac-button--outlined-dark:active {
+  background: rgba(110,65,226,0.16);
+}
+
+.ac-button--outlined-dark:disabled {
+  opacity: 0.56;
+}
+
+.ac-button--outlined-dark:focus {
+  border-color: rgba(17,17,17,0.48);
+}
+
+
+
+
+

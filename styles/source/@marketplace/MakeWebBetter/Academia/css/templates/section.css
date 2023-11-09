@@ -1,0 +1,96 @@
+/* side-bar content */
+
+@media only screen and (max-width: 992px) {
+  .ac-main-content > .row-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .ac-main-content > .row-fluid > .dnd-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/*  get in touch section css */ 
+.ac-git,
+.ac-cta-section,
+.au-subscribe {
+  max-width: 1208px;
+  margin: 0 auto;
+}
+
+.ac-git > .row-fluid {
+  justify-content: space-between;
+}
+
+.ac-cta-section {
+  position: relative;
+}
+
+
+@media only screen and (min-width: 992px){
+  .ac-cta-section .ac-image {
+    position: absolute;
+    top: -60px;
+    left: 50px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .ac-git,
+  .au-subscribe,
+  .ac-cta-section {
+    margin: 0 20px;
+  }
+  
+  .ac-cta-section .ac-image {
+    left: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span8 .span6,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span12 .span6,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span12, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span11, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span10,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span9, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span8, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span7, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span6, 
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span5,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span4,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span3,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span2,
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .span1 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .dnd-column {
+    margin-bottom: 30px;
+  }
+
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .dnd-column:last-child {
+    margin-bottom: 0;
+  }
+
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width > .row-fluid {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .dnd-column {
+    margin-bottom: 30px;
+  }
+
+  body:not(.hubspot-disable-focus-styles) .ac-tab-full-width .dnd-column:last-child {
+    margin-bottom: 0;
+  }
+}
+

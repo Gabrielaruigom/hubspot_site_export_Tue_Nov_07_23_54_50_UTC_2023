@@ -1,0 +1,794 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Instructors Listing
+screenshotPath: ../images/template-previews/instructors-listing.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--intructors-listing'
+%}
+
+{# Instructor Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_image'
+        },
+        banner_content= {
+         'subtitle': 'Instructors',
+         'content': '<h1>Learning make us</h1>'
+        },
+         breadcrumb={
+          "breadcrumb" : {
+            "current" : {
+              "current_page" : "Instructors Listing"
+            },
+            "parent" : [ {
+              "parent_name" : "Home",
+              "parent_page_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "https://www.hubspot.com/",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ]
+          }
+        },
+        button_breadcrumb_choice = {
+          'select_actions': 'breadcrumb'
+        },
+        style = {
+          'background_image' : {
+            'image': {
+              'src': get_asset_url('../images/multipurpose/banner-six.jpg'),
+              'alt': 'Banner Image'
+            }
+          },
+           'max_width' : {
+            'enable' : true,
+            'value': 450
+          },
+          "breadcrumb" : {
+            "overwrite_color" : true
+          },
+          "content_color" : {
+            "heading" : {
+              "enable_heading_color" : true
+            },
+            "subtitle" : {
+              "overwrite_style" : true
+            }
+          }
+        }
+        }
+        
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Instructors Banner #}
+
+{# Two Column Content Section #}
+{% include_dnd_partial path='../sections/two-column-img-text.html' %}
+{# End Of Two Column Content #}
+
+{# Team Section#}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "100px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="You can learn anything"
+      %}
+        {% module_attribute "content" %}
+          <h2>Our Teachers</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 50,
+          "height_mobile_" : 50,
+          "height_tablet_" : 50
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/our-team",
+        offset=0,
+        width=12,
+        layout_choice={
+          "choice" : "grid"
+        },
+        team_member=[ {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 404,
+            "loading" : "lazy",
+            "max_height" : 404,
+            "max_width" : 375,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-nine.jpg'),
+            "width" : 375
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 404,
+            "loading" : "lazy",
+            "max_height" : 404,
+            "max_width" : 376,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-seven.jpg'),
+            "width" : 376
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 406,
+            "loading" : "lazy",
+            "max_height" : 406,
+            "max_width" : 378,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-eight.png'),
+            "width" : 378
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 405,
+            "loading" : "lazy",
+            "max_height" : 405,
+            "max_width" : 377,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-twelve.jpg'),
+            "width" : 377
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 402,
+            "loading" : "lazy",
+            "max_height" : 402,
+            "max_width" : 373,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-ten.jpg'),
+            "width" : 373
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 403,
+            "loading" : "lazy",
+            "max_height" : 403,
+            "max_width" : 375,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-eleven.jpg'),
+            "width" : 375
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 405,
+            "loading" : "lazy",
+            "max_height" : 405,
+            "max_width" : 376,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-three.jpg'),
+            "width" : 376
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 405,
+            "loading" : "lazy",
+            "max_height" : 405,
+            "max_width" : 376,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-four.jpg'),
+            "width" : 376
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 402,
+            "loading" : "lazy",
+            "max_height" : 402,
+            "max_width" : 378,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-six.jpg'),
+            "width" : 378
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{# End of Team Section#}
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,434 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Career Listing
+screenshotPath: ../images/template-previews/career.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--career'
+%}
+
+{# Career Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_color'
+        },
+        banner_content= {
+         'subtitle': 'Join us',
+         'content': '<h1>We are Hiring</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque.</p>'
+        },
+        style = {
+          'banner_content_alignment': {
+            'banner_content_alignment_desktop_': {
+              'alignment_choice': 'center'
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Career Banner #}
+
+{# Job Listing Tabs #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "40px",
+      "left" : "20px",
+      "right" : "20px",
+      "top" : "40px"
+    },
+    "mobile" : {
+      "left" : "10px",
+      "right" : "10px"
+    }
+  }
+%}
+  {% dnd_module
+    path="../modules/listing-layouts",
+    offset=0,
+    width=12,
+    enable_description=true,
+    listing_content=[ {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,hire",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    }, {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,job",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    }, {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,state",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    }, {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,city",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    }, {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,job",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    }, {
+      "button" : {
+        "link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        },
+        "text" : "Apply Now"
+      },
+      "date" : {
+        "date" : 1637902800000,
+        "enable_date" : false
+      },
+      "date_field" : {
+        "date_field_1" : 1644987600000,
+        "icon" : {
+          "name" : "Calendar",
+          "type" : "REGULAR",
+          "unicode" : "f133"
+        }
+      },
+      "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together. Come together live everyday to chat, interact and make Entertainment Together.</p>",
+      "detail_page" : {
+        "detail_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubspot.com/",
+            "type" : "EXTERNAL"
+          }
+        }
+      },
+      "duration" : {
+        "icon" : {
+          "name" : "Clock",
+          "type" : "REGULAR",
+          "unicode" : "f017"
+        },
+        "text" : "12hours"
+      },
+      "grid_item_class" : "*,city",
+      "subtitle" : {
+        "enable_subtitle" : true,
+        "subtitle" : "4 months ago"
+      },
+      "tag" : {
+        "enable_tag" : true,
+        "tag" : "development"
+      },
+      "title" : "Learn AngularJS with Live projects in 4 weeks...",
+      "user_name" : {
+        "icon" : {
+          "name" : "User Tie",
+          "type" : "SOLID",
+          "unicode" : "f508"
+        },
+        "text" : "Devon Lane"
+      }
+    } ],
+    listing_layout_choice={
+      "listing_layouts" : "filter_layout"
+    },
+    style={
+      "tag" : {
+        "background" : {
+          "color" : {
+            "color" : "#FF9F0D",
+            "opacity" : 100
+          }
+        }
+      }
+    }
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+{# End Of Job Listing Tabs #}
+
+
+{% end_dnd_area %}
+{% endblock body %}

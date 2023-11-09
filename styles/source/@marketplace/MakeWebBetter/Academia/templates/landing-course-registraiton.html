@@ -1,0 +1,474 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Landing Page Course Registration
+screenshotPath: ../images/template-previews/course-registration.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block header %}
+{% global_partial path='./partials/header-no-navigation.html' %}
+{% endblock header %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--course-landing'
+%}
+
+{# Landing Page Banner #}
+{% include_dnd_partial path='../sections/two-column-form-text.html' %}
+{# End of Landing Page Banner #}
+
+{# Testimonial Section #}
+{% dnd_section
+ %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+     {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="Testimonials"
+      %}
+        {% module_attribute "content" %}
+          <h2>Words of our alumni</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/testimonials",
+        offset=0,
+        width=12,
+        testimonial_layouts_choice={
+          "testimonial_layouts" : "double_column_slider"
+        },
+        testimonials_content=[ {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-one.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-two.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-three.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-four.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{# End Of Testimonial Section #}
+
+
+{# Faq Section  #}
+{% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true,
+            "value" : 750
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="FAQ’s"
+      %}
+        {% module_attribute "content" %}
+          <h2>Do you have any Questions</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 50,
+          "height_mobile_" : 40,
+          "height_tablet_" : 40
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/accordion",
+        offset=0,
+        width=12,
+        style={
+          "accordions" : {
+            "alignment" : {
+              "alignment_choice" : "Center"
+            },
+            "max_width" : {
+              "value" : 800
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Faq Section  #}
+
+{% end_dnd_area %}
+{% endblock body %}
+{% block footer %}
+{% global_partial path='./partials/footer-no-navigation.html' %}
+{% endblock footer %}

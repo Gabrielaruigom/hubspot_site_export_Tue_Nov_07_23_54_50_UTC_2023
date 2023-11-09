@@ -1,0 +1,750 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Event Listing
+screenshotPath: ../images/template-previews/event-listings.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+    label='Main section',
+    class='body-container body-container--event-listing'
+%}
+
+{# Event Listing Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_image'
+        },
+        banner_content= {
+         'subtitle': 'Register Now',
+         'content': '<h1>Join Our Workshop To Learn Something New</h1>'
+        },
+        breadcrumb={
+          "breadcrumb" : {
+            "current" : {
+              "current_page" : "Event Listing"
+            },
+            "parent" : [ {
+              "parent_name" : "Home",
+              "parent_page_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "https://www.hubspot.com/",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ]
+          }
+        },
+        button_breadcrumb_choice = {
+          'select_actions': 'breadcrumb'
+        },
+        style = {
+          'background_image' : {
+            'image': {
+              'src': get_asset_url('../images/multipurpose/banner-eight.jpg'),
+              'alt': 'Banner Image'
+            }
+          },
+          "max_width" : {
+            "enable" : true,
+             "value": 750
+          },
+          "breadcrumb" : {
+            "overwrite_color" : true
+          },
+          "content_color" : {
+            "heading" : {
+              "enable_heading_color" : true
+            },
+            "subtitle" : {
+              "overwrite_style" : true
+            }
+          }
+        }
+        
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Event Listing Banner #}
+
+{# Event Listing Section #}
+{% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "16px",
+        "right" : "16px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/listing-layouts",
+        offset=0,
+        width=12,
+        enable_box_shadow=true,
+        enable_tabs=false,
+        enable_button=false,
+        listing_content=[ {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+          "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "enable_duration" : true,
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-six.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        }, {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+          "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "enable_duration" : true,
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-two.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        }, {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+          "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "enable_duration" : true,
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-three.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        }, {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+           "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "enable_duration" : true,
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-one.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        }, {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+          "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "enable_duration" : true,
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-five.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        }, {
+          "button" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "Enroll Now"
+          },
+          "date" : {
+            "date" : 1637902800000,
+            "enable_date" : false
+          },
+          "date_field" : {
+          "enable_date" : true,
+            "date_field_1" : 1644987600000,
+            "icon" : {
+              "name" : "Calendar",
+              "type" : "REGULAR",
+              "unicode" : "f133"
+            }
+          },
+          "description" : "<p>Come together live everyday to chat, interact and make Entertainment Together.</p>",
+          "detail_page" : {
+            "detail_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "duration" : {
+            "icon" : {
+              "name" : "Clock",
+              "type" : "REGULAR",
+              "unicode" : "f017"
+            },
+            "text" : "New York"
+          },
+          "enable_description" : false,
+          "grid_item_class" : "all",
+          "image" : {
+            "alt" : "Events",
+            "height" : 257,
+            "loading" : "lazy",
+            "max_height" : 257,
+            "max_width" : 395,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/event-four.jpg'),
+            "width" : 395
+          },
+          "subtitle" : {
+            "enable_subtitle" : true,
+            "subtitle" : "4 months ago"
+          },
+          "tag" : {
+            "enable_tag" : true,
+            "tag" : "development"
+          },
+          "title" : "Learn AngularJS with Live projects in 4 weeks...",
+          "user_name" : {
+            "icon" : {
+              "name" : "User Tie",
+              "type" : "SOLID",
+              "unicode" : "f508"
+            },
+            "enable_username" : true,
+            "text" : "Devon Lane"
+          }
+        } ],
+        listing_layout_choice={
+          "listing_layouts" : "grid_layout"
+        },
+        style={
+          "tag" : {
+            "background" : {
+              "color" : {
+                "color" : "#000000",
+                "opacity" : 50
+              }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Event Listing Section #}
+
+{# Two Column Video Section #}
+{% include_dnd_partial path='../sections/two-column-video-text.html' %}
+{# End Of Two Column Video Section #}
+
+{# Partner Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "80px",
+      "top" : "80px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/our-partners",
+        offset=0,
+        width=12,
+        layout_choice={
+          "select_layout" : "listing"
+        },
+        partner_content=[ {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Goodfirms",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 270,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/multipurpose/goodfirms.png'),
+            "width" : 270
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.goodfirms.co/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Crowd Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 142,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/crowd.png'),
+            "width" : 142
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.goodfirms.co/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Capterra Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 175,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/capterra.png'),
+            "width" : 175
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.capterra.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Trustpilot Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 162,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/trustpilot.png'),
+            "width" : 162
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.trustpilot.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Hubspot Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 137,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/hubspot.png'),
+            "width" : 137
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ],
+        show_content=false
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Partner Section #}
+
+{% end_dnd_area %}
+{% endblock body %}

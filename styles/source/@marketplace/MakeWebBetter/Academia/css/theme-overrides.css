@@ -1,0 +1,1419 @@
+{% import './tools/_macros.css' %}
+
+{## Table of contents
+
+        1. Variables
+          1a. Containers
+          1b. Colors
+          1c. Typography
+          1d. Corners
+          1e. Buttons
+          1f. Forms
+          1g. Tables
+          1h. Site header
+          1i. Site footer
+        2. Containers / Grid / DnD Areas
+        3. Typography
+        4. Corners
+        5. Buttons
+        6. Forms
+        7. Tables
+        8. Site header
+        9. Site footer
+        10. Blog
+        11. System pages
+        12. Modules
+
+      ##}
+
+{###########################################################################}
+{############################   1. Variables   #############################}
+{###########################################################################}
+
+/* 1a. Containers */
+
+/*  Container Width */
+
+{% set container_width = theme.layout_setting.spacing.container_width.max_width ~ 'px' %}
+
+/*  Section Horizontal Spacing */
+
+{% set horizontal_spacing_lp = theme.layout_setting.spacing.section_spacing.horizontal_spacing.desktop.value ~ 'px' %}
+{% set horizontal_spacing_mb = theme.layout_setting.spacing.section_spacing.horizontal_spacing.mobile.value ~ 'px' %}
+
+/*  Section Vertical Spacing */
+
+{% set vertical_spacing_lp = theme.layout_setting.spacing.section_spacing.vertical_spacing.desktop.value ~ 'px' %}
+{% set vertical_spacing_mb = theme.layout_setting.spacing.section_spacing.vertical_spacing.mobile.value ~ 'px' %}
+
+
+/* 1b. Colors */
+
+{% set primary_color = theme.color_font_setting.global_colors.primary.color  %}
+{% set accent_color = theme.color_font_setting.global_colors.accent_color.color %}
+{% set secondary_color = theme.color_font_setting.global_colors.secondary.color %}
+{% set body_bg_color = theme.color_font_setting.global_colors.body_background_color.color %}
+{% set heading_color = theme.color_font_setting.global_colors.heading_color.color  %}
+
+/* 1c. Typography */
+
+{% set sub_title_font = theme.color_font_setting.global_fonts.sub_title_font %}
+{% set primary_font = theme.color_font_setting.global_fonts.primary_font %}
+{% set secondary_font = theme.color_font_setting.global_fonts.secondary_font %}
+
+/* Mini Title */
+
+{% set mini_title_font = theme.color_font_setting.typography.mini_title.desktop.font %}
+{% set mini_title_spacing = theme.color_font_setting.typography.mini_title.desktop.letter_spacing %}
+{% set mini_title_line_height = theme.color_font_setting.typography.mini_title.desktop.line_height %}
+{% set mini_title_tab_font = theme.color_font_setting.typography.mini_title.tablet.font_size %}
+{% set mini_title_tab_line_height = theme.color_font_setting.typography.mini_title.tablet.line_height %}
+{% set mini_title_tab_letter_spacing = theme.color_font_setting.typography.mini_title.tablet.letter_spacing %}
+{% set mini_title_mb_font = theme.color_font_setting.typography.mini_title.mobile.font_size %}
+{% set mini_title_mb_line_height = theme.color_font_setting.typography.mini_title.mobile.line_height %}
+{% set mini_title_mb_letter_spacing = theme.color_font_setting.typography.mini_title.mobile.letter_spacing %}
+
+/* Body Text */
+
+{% set body_font = theme.color_font_setting.typography.body_text.desktop.font %}
+{% set body_letter_spacing = theme.color_font_setting.typography.body_text.desktop.letter_spacing %}
+{% set body_line_height = theme.color_font_setting.typography.body_text.desktop.line_height %}
+{% set body_tab_font = theme.color_font_setting.typography.body_text.tablet.font_size %}
+{% set body_tab_line_height = theme.color_font_setting.typography.body_text.tablet.line_height %}
+{% set body_tab_letter_spacing = theme.color_font_setting.typography.body_text.tablet.letter_spacing %}
+{% set body_mb_font = theme.color_font_setting.typography.body_text.mobile.font_size %}
+{% set body_mb_line_height = theme.color_font_setting.typography.body_text.mobile.line_height %}
+{% set body_mb_letter_spacing = theme.color_font_setting.typography.body_text.mobile.letter_spacing %}
+
+/* Heading One */
+
+{% set heading_one_font = theme.color_font_setting.typography.heading_one.desktop.font %}
+{% set heading_one_letter_spacing = theme.color_font_setting.typography.heading_one.desktop.letter_spacing %}
+{% set heading_one_line_height = theme.color_font_setting.typography.heading_one.desktop.line_height %}
+{% set heading_one_transform = theme.color_font_setting.typography.heading_one.desktop.transform %}
+{% set heading_one_tb_font = theme.color_font_setting.typography.heading_one.tablet.font_size %}
+{% set heading_one_tb_line_height = theme.color_font_setting.typography.heading_one.tablet.line_height %}
+{% set heading_one_tb_letter_spacing = theme.color_font_setting.typography.heading_one.tablet.letter_spacing %}
+{% set heading_one_mb_font = theme.color_font_setting.typography.heading_one.mobile.font_size %}
+{% set heading_one_mb_line_height = theme.color_font_setting.typography.heading_one.mobile.line_height %}
+{% set heading_one_mb_letter_spacing = theme.color_font_setting.typography.heading_one.mobile.letter_spacing %}
+
+/* Heading Two */
+
+{% set heading_two_font = theme.color_font_setting.typography.heading_two.desktop.font %}
+{% set heading_two_letter_spacing = theme.color_font_setting.typography.heading_two.desktop.letter_spacing %}
+{% set heading_two_line_height = theme.color_font_setting.typography.heading_two.desktop.line_height %}
+{% set heading_two_transform = theme.color_font_setting.typography.heading_two.desktop.transform %}
+{% set heading_two_tb_font = theme.color_font_setting.typography.heading_two.tablet.font_size %}
+{% set heading_two_tb_line_height = theme.color_font_setting.typography.heading_two.tablet.line_height %}
+{% set heading_two_tb_letter_spacing = theme.color_font_setting.typography.heading_two.tablet.letter_spacing %}
+{% set heading_two_mb_font = theme.color_font_setting.typography.heading_two.mobile.font_size %}
+{% set heading_two_mb_line_height = theme.color_font_setting.typography.heading_two.mobile.line_height %}
+{% set heading_two_mb_letter_spacing = theme.color_font_setting.typography.heading_two.mobile.letter_spacing %}
+
+
+/* Heading Three */
+
+{% set heading_three_font = theme.color_font_setting.typography.heading_three.desktop.font %}
+{% set heading_three_letter_spacing = theme.color_font_setting.typography.heading_three.desktop.letter_spacing %}
+{% set heading_three_line_height = theme.color_font_setting.typography.heading_three.desktop.line_height %}
+{% set heading_three_transform = theme.color_font_setting.typography.heading_three.desktop.transform %}
+{% set heading_three_tb_font = theme.color_font_setting.typography.heading_three.tablet.font_size %}
+{% set heading_three_tb_line_height = theme.color_font_setting.typography.heading_three.tablet.line_height %}
+{% set heading_three_tb_letter_spacing = theme.color_font_setting.typography.heading_three.tablet.letter_spacing %}
+{% set heading_three_mb_font = theme.color_font_setting.typography.heading_three.mobile.font_size %}
+{% set heading_three_mb_line_height = theme.color_font_setting.typography.heading_three.mobile.line_height %}
+{% set heading_three_mb_letter_spacing = theme.color_font_setting.typography.heading_three.mobile.letter_spacing %}
+
+
+/* Heading Four */
+
+{% set heading_four_font = theme.color_font_setting.typography.heading_four.desktop.font %}
+{% set heading_four_letter_spacing = theme.color_font_setting.typography.heading_four.desktop.letter_spacing %}
+{% set heading_four_line_height = theme.color_font_setting.typography.heading_four.desktop.line_height %}
+{% set heading_four_transform = theme.color_font_setting.typography.heading_four.desktop.transform %}
+{% set heading_four_tb_font = theme.color_font_setting.typography.heading_four.tablet.font_size %}
+{% set heading_four_tb_line_height = theme.color_font_setting.typography.heading_four.tablet.line_height %}
+{% set heading_four_tb_letter_spacing = theme.color_font_setting.typography.heading_four.tablet.letter_spacing %}
+{% set heading_four_mb_font = theme.color_font_setting.typography.heading_four.mobile.font_size %}
+{% set heading_four_mb_line_height = theme.color_font_setting.typography.heading_four.mobile.line_height %}
+{% set heading_four_mb_letter_spacing = theme.color_font_setting.typography.heading_four.mobile.letter_spacing %}
+
+/* Heading Five */
+
+{% set heading_five_font = theme.color_font_setting.typography.heading_five.desktop.font %}
+{% set heading_five_letter_spacing = theme.color_font_setting.typography.heading_five.desktop.letter_spacing %}
+{% set heading_five_line_height = theme.color_font_setting.typography.heading_five.desktop.line_height %}
+{% set heading_five_transform = theme.color_font_setting.typography.heading_five.desktop.transform %}
+{% set heading_five_tb_font = theme.color_font_setting.typography.heading_five.tablet.font_size %}
+{% set heading_five_tb_line_height = theme.color_font_setting.typography.heading_five.tablet.line_height %}
+{% set heading_five_tb_letter_spacing = theme.color_font_setting.typography.heading_five.tablet.letter_spacing %}
+{% set heading_five_mb_font = theme.color_font_setting.typography.heading_five.mobile.font_size %}
+{% set heading_five_mb_line_height = theme.color_font_setting.typography.heading_five.mobile.line_height %}
+{% set heading_five_mb_letter_spacing = theme.color_font_setting.typography.heading_five.mobile.letter_spacing %}
+
+
+/* Heading Six */
+
+{% set heading_six_font = theme.color_font_setting.typography.heading_six.desktop.font %}
+{% set heading_six_letter_spacing = theme.color_font_setting.typography.heading_six.desktop.letter_spacing %}
+{% set heading_six_line_height = theme.color_font_setting.typography.heading_six.desktop.line_height %}
+{% set heading_six_transform = theme.color_font_setting.typography.heading_six.desktop.transform %}
+{% set heading_six_tb_font = theme.color_font_setting.typography.heading_six.tablet.font_size %}
+{% set heading_six_tb_line_height = theme.color_font_setting.typography.heading_six.tablet.line_height %}
+{% set heading_six_tb_letter_spacing = theme.color_font_setting.typography.heading_six.tablet.letter_spacing %}
+{% set heading_six_mb_font = theme.color_font_setting.typography.heading_six.mobile.font_size %}
+{% set heading_six_mb_line_height = theme.color_font_setting.typography.heading_six.mobile.line_height %}
+{% set heading_six_mb_letter_spacing = theme.color_font_setting.typography.heading_six.mobile.letter_spacing %}
+
+/* Links */
+
+{% set anchor_font = theme.color_font_setting.typography.links.normal.font %}
+{% set anchor_hover_color = theme.color_font_setting.typography.links.hover.color.color %}
+
+/* 1d. Corners */
+
+{% set base_border_radius = theme.layout_setting.corners.radius.base_border_radius %}
+{% set image_border_radius = theme.layout_setting.corners.radius.image_border_radius %}
+
+/* 1e. Buttons */
+
+{% set btn_spacing = theme.layout_setting.buttons.button.spacing.spacing.css %}
+{% set btn_font_size = theme.layout_setting.buttons.button.button_text.font_size ~ 'px' %}
+{% set btn_line_height = theme.layout_setting.buttons.button.button_text.line_height ~ 'px' %}
+{% set btn_text_transform = theme.layout_setting.buttons.button.button_text.transform %}
+{% set btn_corner_radius = theme.layout_setting.buttons.button.corner.radius ~ 'px' %}
+
+/* Filled Button  */
+
+/* Light  */
+{% set filled_btn_light_bg_color = theme.layout_setting.buttons.filled_button.light.normal.background.color %}
+{% set filled_btn_light_font = theme.layout_setting.buttons.filled_button.light.normal.text.font %}
+{% set filled_btn_light_border = theme.layout_setting.buttons.filled_button.light.normal.border.border.css %}
+{% set filled_btn_light_hover_font = theme.layout_setting.buttons.filled_button.light.hover.text.font %}
+{% set filled_btn_light_hover_bg_color = theme.layout_setting.buttons.filled_button.light.hover.background.color %}
+{% set filled_btn_light_hover_border = theme.layout_setting.buttons.filled_button.light.hover.border.border.css %}
+{% set filled_btn_light_active_font = theme.layout_setting.buttons.filled_button.light.active.text.font %}
+{% set filled_btn_light_active_bg_color = theme.layout_setting.buttons.filled_button.light.active.background.color %}
+{% set filled_btn_light_active_border = theme.layout_setting.buttons.filled_button.light.active.border.border.css %}
+{% set filled_btn_light_focus_font = theme.layout_setting.buttons.filled_button.light.focus.text.font %}
+{% set filled_btn_light_focus_bg_color = theme.layout_setting.buttons.filled_button.light.focus.background.color %}
+{% set filled_btn_light_focus_border = theme.layout_setting.buttons.filled_button.light.focus.border.border.css %}
+{% set filled_btn_focus_outline_color = theme.layout_setting.buttons.filled_button.light.focus.outline_color.color.color %}
+
+/* Dark  */
+{% set filled_btn_dark_bg_color = theme.layout_setting.buttons.filled_button.dark.normal.background.color %}
+{% set filled_btn_dark_font = theme.layout_setting.buttons.filled_button.dark.normal.text.font %}
+{% set filled_btn_dark_border = theme.layout_setting.buttons.filled_button.dark.normal.border.border.css %}
+{% set filled_btn_dark_hover_font = theme.layout_setting.buttons.filled_button.dark.hover.text.font %}
+{% set filled_btn_dark_hover_bg_color = theme.layout_setting.buttons.filled_button.dark.hover.background.color %}
+{% set filled_btn_dark_hover_border = theme.layout_setting.buttons.filled_button.dark.hover.border.border.css %}
+{% set filled_btn_dark_active_font = theme.layout_setting.buttons.filled_button.dark.active.text.font %}
+{% set filled_btn_dark_active_bg_color = theme.layout_setting.buttons.filled_button.dark.active.background.color %}
+{% set filled_btn_dark_active_border = theme.layout_setting.buttons.filled_button.dark.active.border.border.css %}
+{% set filled_btn_dark_focus_font = theme.layout_setting.buttons.filled_button.dark.focus.text.font %}
+{% set filled_btn_dark_focus_bg_color = theme.layout_setting.buttons.filled_button.dark.focus.background.color %}
+{% set filled_btn_dark_focus_border = theme.layout_setting.buttons.filled_button.dark.focus.border.border.css %}
+{% set filled_btn_dark_focus_outline_color = theme.layout_setting.buttons.filled_button.dark.focus.outline_color.color.color %}
+
+/* Outlined Button  */
+
+/* Light  */
+{% set outlined_btn_light_font = theme.layout_setting.buttons.outlined_button.light.normal.text.font %}
+{% set outlined_btn_light_border = theme.layout_setting.buttons.outlined_button.light.normal.border.border.css %}
+{% set outlined_btn_light_hover_font = theme.layout_setting.buttons.outlined_button.light.hover.text.font %}
+{% set outlined_btn_light_hover_bg_color = theme.layout_setting.buttons.outlined_button.light.hover.background.color %}
+{% set outlined_btn_light_hover_border = theme.layout_setting.buttons.outlined_button.light.hover.border.border.css %}
+{% set outlined_btn_light_active_font = theme.layout_setting.buttons.outlined_button.light.active.text.font %}
+{% set outlined_btn_light_active_bg_color = theme.layout_setting.buttons.outlined_button.light.active.background.color %}
+{% set outlined_btn_light_active_border = theme.layout_setting.buttons.outlined_button.light.active.border.border.css %}
+{% set outlined_btn_light_focus_font = theme.layout_setting.buttons.outlined_button.light.focus.text.font %}
+{% set outlined_btn_light_focus_bg_color = theme.layout_setting.buttons.outlined_button.light.focus.background.color %}
+{% set outlined_btn_;ight_focus_border = theme.layout_setting.buttons.outlined_button.light.focus.border.border.css %}
+{% set outlined_btn_focus_outline_color = theme.layout_setting.buttons.outlined_button.light.focus.outline_color.color.color %}
+
+
+/* Dark  */
+{% set outlined_btn_dark_font = theme.layout_setting.buttons.outlined_button.dark.normal.text.font %}
+{% set outlined_btn_dark_border = theme.layout_setting.buttons.outlined_button.dark.normal.border.border.css %}
+{% set outlined_btn_dark_hover_font = theme.layout_setting.buttons.outlined_button.dark.hover.text.font %}
+{% set outlined_btn_dark_hover_bg_color = theme.layout_setting.buttons.outlined_button.dark.hover.background.color %}
+{% set outlined_btn_dark_hover_border = theme.layout_setting.buttons.outlined_button.dark.hover.border.border.css %}
+{% set outlined_btn_dark_active_font = theme.layout_setting.buttons.outlined_button.dark.active.text.font %}
+{% set outlined_btn_dark_active_bg_color = theme.layout_setting.buttons.outlined_button.dark.active.background.color %}
+{% set outlined_btn_dark_active_border = theme.layout_setting.buttons.outlined_button.dark.active.border.border.css %}
+{% set outlined_btn_dark_focus_font = theme.layout_setting.buttons.outlined_button.dark.focus.text.font %}
+{% set outlined_btn_dark_focus_bg_color = theme.layout_setting.buttons.outlined_button.dark.focus.background.color %}
+{% set outlined_btn_dark_focus_border = theme.layout_setting.buttons.outlined_button.dark.focus.border.border.css %}
+{% set outlined_btn_dark_focus_outline_color = theme.layout_setting.buttons.outlined_button.dark.focus.outline_color.color.color %}
+
+/* 1f. Forms */
+
+{% set form_title_font = theme.layout_setting.forms.title.text.font %}
+{% set form_title_line_height = theme.layout_setting.forms.title.text.line_height %}
+{% set form_title_letter_spacing = theme.layout_setting.forms.title.text.letter_spacing %}
+{% set form_title_text_transform = theme.layout_setting.forms.title.text.transform %}
+{% set form_title_bg_color = color(theme.layout_setting.forms.title.background.color) %}
+{% set form_title_spacing = theme.layout_setting.forms.title.spacing.spacing.css %}
+{% set form_title_corner_radius = theme.layout_setting.forms.title.corner.radius ~ 'px' %}
+
+{% set form_label_font = theme.layout_setting.forms.labels.text.font %}
+{% set form_label_line_height = theme.layout_setting.forms.labels.text.line_height %}
+{% set form_label_letter_spacing = theme.layout_setting.forms.labels.text.letter_spacing %}
+{% set form_label_text_transform = theme.layout_setting.forms.labels.text.transform %}
+{% set form_label_spacing = theme.layout_setting.forms.labels.spacing.spacing.css %}
+
+{% set form_help_text_font = theme.layout_setting.forms.help_text.text.font %}
+
+{% set form_input_placeholder_color = theme.layout_setting.forms.fields.inputs.placeholder.color.color %}
+{% set form_input_font = theme.layout_setting.forms.fields.inputs.text.font %}
+{% set form_input_bg_color = color(theme.layout_setting.forms.fields.inputs.background.color) %}
+{% set form_input_spacing = theme.layout_setting.forms.fields.inputs.spacing.spacing.css %}
+{% set form_input_border = theme.layout_setting.forms.fields.inputs.border.border.css %}
+{% set form_input_focus_border = theme.layout_setting.forms.fields.inputs.border_color_on_focus.color.color %}
+{% set form_input_corner_radius = theme.layout_setting.forms.fields.inputs.corner.radius ~ 'px' %}
+{% set form_gdpr_text_font = theme.layout_setting.forms.fields.gdpr_text.font %}
+{% set form_rich_text_font = theme.layout_setting.forms.fields.rich_text.font %}
+
+{% set form_bg_color = color(theme.layout_setting.forms.form.background.color) %}
+{% set form_padding = theme.layout_setting.forms.form.spacing.spacing.css %}
+{% set form_border = theme.layout_setting.forms.form.border.border.css %}
+{% set form_corner_radius = theme.layout_setting.forms.form.corner.radius ~ 'px' %}
+
+{% set form_error_msg_font = theme.layout_setting.forms.error_messages.text.font %}
+{% set form_error_msg_line_height = theme.layout_setting.forms.error_messages.text.line_height %}
+{% set form_error_msg_letter_spacing = theme.layout_setting.forms.error_messages.text.letter_spacing %}
+{% set form_error_msg_text_transform = theme.layout_setting.forms.error_messages.text.transform %}
+{% set form_error_msg_spacing = theme.layout_setting.forms.error_messages.spacing.spacing.css %}
+{% set form_error_msg_border = theme.layout_setting.forms.error_messages.border_color.color.color %}
+
+/* 1g. Tables */
+
+{% set table_header_font_color = theme.layout_setting.tables.table_header.text.color.color %}
+{% set table_header_bg_color = color(theme.layout_setting.tables.table_header.background.color) %}
+
+{% set table_body_font_color = theme.layout_setting.tables.table_body.text.color.color %}
+{% set table_body_bg_color = color(theme.layout_setting.tables.table_body.background.color) %}
+
+{% set table_footer_font_color = theme.layout_setting.tables.table_footer.text.color.color %}
+{% set table_footer_bg_color = color(theme.layout_setting.tables.table_footer.background.color) %}
+
+{% set table_border = theme.layout_setting.tables.table_cells.border.border.css %}
+{% set table_spacing = theme.layout_setting.tables.table_cells.spacing.spacing.css %}
+
+/* 1h. Site header */
+
+{% set header_top_bar_bg_color = theme.layout_setting.header.header_top_bar.top_bar_background.color.color %}
+{% set header_bottom_bar_bg_color = theme.layout_setting.header.header_bottom_bar.bottom_bar_background.color.color %}
+
+{% set header_menu_font = theme.layout_setting.header.menu.text.desktop.font %}
+{% set header_menu_line_height = theme.layout_setting.header.menu.text.desktop.line_height %}
+{% set header_menu_text_transform = theme.layout_setting.header.menu.text.desktop.transform %}
+{% set header_menu_font_mb = theme.layout_setting.header.menu.text.mobile.font_size %}
+{% set header_menu_line_height_mb = theme.layout_setting.header.menu.text.mobile.line_height %}
+{% set header_menu_hover_font = theme.layout_setting.header.menu.hover.font %}
+{% set header_menu_active_font = theme.layout_setting.header.menu.active.font %}
+
+{% set header_dropdown_menu_font_color = theme.layout_setting.header.menu.drop_downs.text.color.color %}
+{% set header_dropdown_menu_bg_color = color(theme.layout_setting.header.menu.drop_downs.background.color) %}
+{% set header_dropdown_menu_hover_font_color = theme.layout_setting.header.menu.drop_downs.hover.text.color.color %}
+{% set header_dropdown_menu_hover_bg_color = color(theme.layout_setting.header.menu.drop_downs.hover.background.color) %}
+{% set header_dropdown_menu_active_font_color = theme.layout_setting.header.menu.drop_downs.active.text.font_color.color %}
+
+{% set header_bg_color = theme.layout_setting.header.background.color.color %}
+{% set header_bg_opacity = theme.layout_setting.header.background.color.opacity %}
+
+{% set header_logo_alignment = theme.layout_setting.header.logo.header_no_navigation.alignment %}
+
+
+/* 1i. Site footer */
+
+{% set footer_bg_color = theme.layout_setting.footer.background.color.color %}
+{% set footer_bg_opacity = theme.layout_setting.footer.background.color.opacity %}
+
+{% set footer_menu_font = theme.layout_setting.footer.menu.text.desktop.font %}
+{% set footer_menu_line_height = theme.layout_setting.footer.menu.text.desktop.line_height %}
+{% set footer_menu_text_transform = theme.layout_setting.footer.menu.text.desktop.transform %}
+{% set footer_menu_hover_color = theme.layout_setting.footer.menu.hover.color.color %}
+{% set footer_menu_font_size_mb = theme.layout_setting.footer.menu.text.mobile.font_size %}
+{% set footer_menu_line_height_mb = theme.layout_setting.footer.menu.text.mobile.line_height %}
+
+
+{% set footer_heading_font = theme.layout_setting.footer.heading.desktop.font %}
+{% set footer_heading_line_height = theme.layout_setting.footer.heading.desktop.line_height %}
+{% set footer_heading_transform = theme.layout_setting.footer.heading.desktop.transform %}
+{% set footer_heading_font_size_mb = theme.layout_setting.footer.heading.mobile.font_size %}
+{% set footer_heading_line_height_mb = theme.layout_setting.footer.heading.mobile.line_height %}
+
+
+{% set footer_text_font = theme.layout_setting.footer.text.desktop.font %}
+{% set footer_text_line_height = theme.layout_setting.footer.text.desktop.line_height %}
+{% set footer_text_transform = theme.layout_setting.footer.text.desktop.transform %}
+{% set footer_text_font_size_mb = theme.layout_setting.footer.text.mobile.font_size %}
+{% set footer_text_line_height_mb = theme.layout_setting.footer.text.mobile.line_height %}
+
+{###########################################################################}
+{##################   2. Containers / Grid / DnD Areas   ###################}
+{###########################################################################}
+
+.content-wrapper {
+  max-width: {{ container_width }};
+}
+
+.dnd-section > .row-fluid,
+.content-wrapper {
+  max-width: {{ container_width }};
+}
+
+/* Drag and drop layout styles */
+
+.dnd-section {
+  padding: {{ vertical_spacing_mb }} {{ horizontal_spacing_mb }};
+}
+
+@media only screen and (min-width: 992px) {
+  .dnd-section {
+    padding: {{ vertical_spacing_lp }} {{ horizontal_spacing_lp }};
+  }
+}
+
+
+{###########################################################################}
+{###########################   3. Typography   #############################}
+{###########################################################################}
+
+body {
+  background-color: {{ body_bg_color }};
+}
+
+/* Paragraphs */
+
+body, html,p {
+  {{ body_font.style }};
+  color: {{ body_font.color }};
+  font-size: {{ body_mb_font ~ 'px' }};
+  letter-spacing: {{ body_mb_letter_spacing ~ 'px'}};
+  line-height: {{ body_mb_line_height ~ 'px' }};
+}
+/* Anchors */
+
+a {
+  {{ anchor_font.style }};
+  color: {{ anchor_font.color }};
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: {{ anchor_hover_color }};
+}
+
+/* Headings */
+
+.ac-title-content__subtitle {
+  {{ mini_title_font.style }};
+  color: {{ mini_title_font.color }};
+  font-size: {{ mini_title_mb_font ~ 'px' }};
+  letter-spacing: {{ mini_title_mb_letter_spacing ~ 'px'}};
+  line-height: {{ mini_title_mb_line_height ~ 'px' }};
+}
+
+h1 {
+  {{ heading_one_font.style }};
+  color: {{ heading_one_font.color }};
+  font-size: {{ heading_one_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_one_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_one_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_one_transform }};
+}
+
+h2 {
+  {{ heading_two_font.style }};
+  color: {{ heading_two_font.color }};
+  font-size: {{ heading_two_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_two_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_two_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_two_transform }};
+}
+
+h3 {
+  {{ heading_three_font.style }};
+  color: {{ heading_three_font.color }};
+  font-size: {{ heading_three_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_three_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_three_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_three_transform }};
+}
+
+h4 {
+  {{ heading_four_font.style }};
+  color: {{ heading_four_font.color }};
+  font-size: {{ heading_four_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_four_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_four_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_four_transform }};
+}
+
+h5 {
+  {{ heading_five_font.style }};
+  color: {{ heading_five_font.color }};
+  font-size: {{ heading_five_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_five_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_five_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_five_transform }};
+}
+
+h6,
+.blog-related-posts__title a {
+  {{ heading_six_font.style }};
+  color: {{ heading_six_font.color }};
+  font-size: {{ heading_six_mb_font ~ 'px' }};
+  letter-spacing: {{ heading_six_mb_letter_spacing ~ 'px'}};
+  line-height: {{ heading_six_mb_line_height ~ 'px' }};
+  text-transform: {{ heading_six_transform }};
+}
+
+/* Typography Tablet View  */
+
+@media only screen and (min-width: 768px) {
+  body, html,p {
+    font-size: {{ body_tab_font ~ 'px' }};
+    line-height: {{ body_tab_line_height ~ 'px' }};
+    letter-spacing: {{ body_tab_letter_spacing ~ 'px' }};
+  }
+
+  h1 {
+    font-size: {{ heading_one_tb_font ~ 'px' }};
+    line-height: {{ heading_one_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_one_tb_letter_spacing ~ 'px' }};
+  }
+
+  h2 {
+    font-size: {{ heading_two_tb_font ~ 'px' }};
+    line-height: {{ heading_two_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_two_tb_letter_spacing ~ 'px' }};
+  }
+
+  h3 {
+    font-size: {{ heading_three_tb_font ~ 'px' }};
+    line-height: {{ heading_three_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_three_tb_letter_spacing ~ 'px' }};
+  }
+
+  h4 {
+    font-size: {{ heading_four_tb_font ~ 'px' }};
+    line-height: {{ heading_four_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_four_tb_letter_spacing ~ 'px' }};
+  }
+
+  h5 {
+    font-size: {{ heading_five_tb_font ~ 'px' }};
+    line-height: {{ heading_five_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_five_tb_letter_spacing ~ 'px' }};
+  }
+
+  h6,
+  .blog-related-posts__title a {
+    font-size: {{ heading_six_tb_font ~ 'px' }};
+    line-height: {{ heading_six_tb_line_height ~ 'px' }};
+    letter-spacing: {{ heading_six_tb_letter_spacing ~ 'px' }};
+  }
+
+  .ac-title-content__subtitle {
+    font-size: {{ mini_title_tab_font ~ 'px' }};
+    line-height: {{ mini_title_tab_line_height ~ 'px' }};
+    letter-spacing: {{ mini_title_tab_letter_spacing ~ 'px' }};
+  }
+}
+
+/* Typography Laptop View  */
+
+@media only screen and (min-width: 992px) {
+
+  body, html,p {
+    font-size: {{ body_font.size ~ body_font.size_unit }};
+    letter-spacing: {{ body_letter_spacing ~ 'px' }};
+    line-height: {{ body_line_height ~ 'px'}};
+  }
+
+  h1 {
+    font-size: {{ heading_one_font.size ~ heading_one_font.size_unit }};
+    letter-spacing: {{ heading_one_letter_spacing ~ 'px'}};
+    line-height: {{ heading_one_line_height ~ 'px'}};
+  }
+
+  h2 {
+    font-size: {{ heading_two_font.size ~ heading_two_font.size_unit }};
+    letter-spacing: {{ heading_two_letter_spacing ~ 'px'}};
+    line-height: {{ heading_two_line_height ~ 'px'}};
+  }
+
+  h3 {
+    font-size: {{ heading_three_font.size ~ heading_three_font.size_unit }};
+    letter-spacing: {{ heading_three_letter_spacing ~ 'px'}};
+    line-height: {{ heading_three_line_height ~ 'px'}};
+  }
+
+  h4 {
+    font-size: {{ heading_four_font.size ~ heading_four_font.size_unit }};
+    letter-spacing: {{ heading_four_letter_spacing ~ 'px'}};
+    line-height: {{ heading_four_line_height ~ 'px'}};
+  }
+
+  h5 {
+    font-size: {{ heading_five_font.size ~ heading_five_font.size_unit }};
+    letter-spacing: {{ heading_five_letter_spacing ~ 'px'}};
+    line-height: {{ heading_five_line_height ~ 'px'}};
+  }
+
+  h6,
+  .blog-related-posts__title a {
+    font-size: {{ heading_six_font.size ~ heading_six_font.size_unit }};
+    letter-spacing: {{ heading_six_letter_spacing ~ 'px'}};
+    line-height: {{ heading_six_line_height ~ 'px'}};
+  }
+
+  .ac-title-content__subtitle {
+    font-size: {{ mini_title_font.size ~ mini_title_font.size_unit }};
+    letter-spacing: {{ mini_title_spacing ~ 'px' }};
+    line-height: {{ mini_title_line_height ~ 'px'}};
+  }
+}
+
+{###########################################################################}
+{############################   4. Buttons   ###############################}
+{###########################################################################}
+
+/* Button   */
+
+.ac-button {
+  {{ btn_spacing }}
+  border-radius: {{ btn_corner_radius }};
+  font-size: {{ btn_font_size }};
+  line-height: {{ btn_line_height }};
+  text-transform: {{ btn_text_transform }};
+}
+
+/* Button Filled  */
+
+.ac-button--filled {
+  {{ filled_btn_light_border }}
+  {{ filled_btn_light_font.style }};
+  background: {{ filled_btn_light_bg_color.css }};
+  color: {{ filled_btn_light_font.color }};
+}
+
+.ac-button--filled:hover {
+  {{ filled_btn_light_hover_border }}
+  {{ filled_btn_light_hover_font.style }};
+  background: {{ filled_btn_light_hover_bg_color.css }};
+  color: {{ filled_btn_light_hover_font.color }};
+}
+
+.ac-button--filled:active {
+  {{ filled_btn_light_active_border }}
+  {{ filled_btn_light_active_font.style }};
+  background: {{ filled_btn_light_active_bg_color.css }};
+  color: {{ filled_btn_light_active_font.color }};
+}
+
+.ac-button--filled:focus {
+  {{ filled_btn_light_focus_border }}
+  {{ filled_btn_light_focus_font.style }};
+  background: {{ filled_btn_light_focus_bg_color.css }};
+  color: {{ filled_btn_light_focus_font.color }};
+  outline-color: {{ filled_btn_focus_outline_color }};
+}
+
+/* Filled Dark Button */
+
+.ac-button--filled-dark {
+  {{ filled_btn_dark_border }}
+  {{ filled_btn_dark_font.style }};
+  background: {{ filled_btn_dark_bg_color.css }};
+  color: {{ filled_btn_dark_font.color }};
+}
+
+.ac-button--filled-dark:hover {
+  {{ filled_btn_dark_hover_border }}
+  {{ filled_btn_dark_hover_font.style }};
+  background: {{ filled_btn_dark_hover_bg_color.css }};
+  color: {{ filled_btn_dark_hover_font.color }};
+}
+
+.ac-button--filled-dark:active {
+  {{ filled_btn_dark_active_border }}
+  {{ filled_btn_dark_active_font.style }};
+  background: {{ filled_btn_dark_active_bg_color.css }};
+  color: {{ filled_btn_dark_active_font.color }};
+}
+
+.ac-button--filled-dark:focus {
+  {{ filled_btn_dark_focus_border }}
+  {{ filled_btn_dark_focus_font.style }};
+  background: {{ filled_btn_dark_focus_bg_color.css }};
+  color: {{ filled_btn_dark_focus_font.color }};
+  outline-color: {{ filled_btn_dark_focus_outline_color }};
+}
+
+/* Button Outlined  */
+.ac-button--outlined {
+  {{ outlined_btn_light_border }}
+  {{ outlined_btn_light_font.style }};
+  color: {{ outlined_btn_light_font.color }};
+}
+
+.ac-button--outlined:hover {
+  {{ outlined_btn_light_hover_border }}
+  {{ outlined_btn_light_hover_font.style }};
+  background: {{ outlined_btn_light_hover_bg_color.css }};
+  color: {{ outlined_btn_light_hover_font.color }};
+}
+
+.ac-button--outlined:active {
+  {{ outlined_btn_light_active_border }}
+  {{ outlined_btn_light_active_font.style }};
+  background: {{ outlined_btn_light_active_bg_color.css }};
+  color: {{ outlined_btn_light_active_font.color }};
+}
+
+.ac-button--outlined:focus {
+  {{ outlined_btn_light_focus_border }}
+  {{ outlined_btn_light_focus_font.style }};
+  background: {{ outlined_btn_light_focus_bg_color.css }};
+  color: {{ outlined_btn_light_focus_font.color }};
+  outline-color: {{ outlined_btn_focus_outline_color }};
+}
+
+.ac-button--outlined-dark {
+  {{ outlined_btn_dark_border }}
+  {{ outlined_btn_dark_font.style }};
+  color: {{ outlined_btn_dark_font.color }};
+}
+
+.ac-button--outlined-dark:hover {
+  {{ outlined_btn_dark_hover_border }}
+  {{ outlined_btn_dark_hover_font.style }};
+  background: {{ outlined_btn_dark_hover_bg_color.css }};
+  color: {{ outlined_btn_dark_hover_font.color }};
+}
+
+.ac-button--outlined-dark:active {
+  {{ outlined_btn_dark_active_border }}
+  {{ outlined_btn_dark_active_font.style }};
+  background: {{ outlined_btn_dark_active_bg_color.css }};
+  color: {{ outlined_btn_dark_active_font.color }};
+}
+
+.ac-button--outlined-dark:focus {
+  {{ outlined_btn_dark_focus_border }}
+  {{ outlined_btn_dark_focus_font.style }};
+  background: {{ outlined_btn_dark_focus_bg_color.css }};
+  color: {{ outlined_btn_dark_focus_font.color }};
+  outline-color: {{ outlined_btn_dark_focus_outline_color }};
+}
+
+{###########################################################################}
+{##############################   5. Forms   ###############################}
+{###########################################################################}
+
+/* Form */
+
+form {
+  {{ form_border }}
+  {{ form_padding }}
+  background-color: {{ form_bg_color }};
+  border-radius: {{ form_corner_radius }};
+}
+
+.ac-form .ac-form--form {
+  border-radius: {{ form_corner_radius }};
+}
+
+.form-title + div > form,
+.ac-form--form > span > .form-title + div > form {
+  border-bottom-left-radius: {{ form_corner_radius }};
+  border-bottom-right-radius: {{ form_corner_radius }};
+}
+
+.form-title + div > form,
+.ac-form--form > span > .form-title + div > form {
+  border-radius: 0 0 {{ form_corner_radius }} {{ form_corner_radius }};
+}
+
+/* Form title */
+
+.form-title {
+  {{ form_title_spacing }}
+  {{ form_title_font.style }};
+  background-color: {{ form_title_bg_color }};
+  border-top-left-radius: {{ form_title_corner_radius }};
+  border-top-right-radius: {{ form_title_corner_radius }};
+  color: {{ form_title_font.color }};
+  font-size: {{ form_title_font.size ~ form_title_font.size_unit }};
+  letter-spacing: {{ form_title_letter_spacing ~ 'px' }};
+  line-height: {{ form_title_line_height ~ 'px' }};
+  text-transform: {{ form_title_text_transform }};
+  margin-bottom: 0;
+}
+
+/* Labels */
+
+form label {
+  {{ form_label_spacing }}
+  {{ form_label_font.style }};
+  color: {{ form_label_font.color }};
+  font-size: {{ form_label_font.size ~ form_label_font.size_unit }};
+  letter-spacing: {{ form_label_letter_spacing ~ 'px'}};
+  line-height: {{ form_label_line_height ~ 'px' }};
+  text-transform: {{ form_label_text_transform }};
+}
+
+/* Help text */
+
+form legend {
+  {{ form_help_text_font.style }};
+  color: {{ form_help_text_font.color }};
+  font-size: {{ form_help_text_font.size ~ form_help_text_font.size_unit }};
+}
+
+/* Form fields */
+
+form input[type='text'],
+form input[type='email'],
+form input[type='password'],
+form input[type='tel'],
+form input[type='number'],
+form input[type='search'],
+form select,
+form textarea {
+  {{ form_input_border }}
+  {{ form_input_spacing }}
+  {{ form_input_font.style }};
+  background-color: {{ form_input_bg_color }};
+  border-radius: {{ form_input_corner_radius }};
+  color: {{ form_input_font.color }};
+  font-size: {{ form_input_font.size ~ form_input_font.size_unit }};
+}
+
+form input[type='text']:focus,
+form input[type='email']:focus,
+form input[type='password']:focus,
+form input[type='tel']:focus,
+form input[type='number']:focus,
+form input[type='search']:focus,
+form select:focus,
+form textarea:focus {
+  border-color: {{ form_input_focus_border }};
+}
+
+/* Form fields - placeholders */
+
+::-webkit-input-placeholder {
+  color: {{ form_input_placeholder_color }};
+}
+
+::-moz-placeholder {
+  color: {{ form_input_placeholder_color }};
+}
+
+:-ms-input-placeholder {
+  color: {{ form_input_placeholder_color }};
+}
+
+:-moz-placeholder {
+  color: {{ form_input_placeholder_color }};
+}
+
+::placeholder {
+  color: {{ form_input_placeholder_color }};
+}
+
+/* Form fields - date picker */
+
+form .hs-dateinput:before {
+  right: {{ theme.layout_setting.forms.fields.inputs.spacing.spacing.padding.right.value ~ theme.layout_setting.forms.fields.inputs.spacing.spacing.padding.right.units }};
+}
+
+form .pika-table thead th {
+  background-color: {{ table_header_bg_color }};
+  color: {{ table_header_font_color }};
+}
+
+form td.is-today .pika-button {
+  color: {{ table_body_font_color }};
+}
+
+form .is-selected .pika-button {
+  background-color: #ffffff;
+  color: {{ table_body_font_color }};
+}
+
+form .pika-button:hover {
+  background-color: {{ primary_color }} !important;
+}
+
+/* Headings and text */
+
+form .hs-richtext,
+form .hs-richtext *,
+form .hs-richtext p,
+form .hs-richtext h1,
+form .hs-richtext h2,
+form .hs-richtext h3,
+form .hs-richtext h4,
+form .hs-richtext h5,
+form .hs-richtext h6 {
+  {{ form_rich_text_font.style }};
+  color: {{ form_rich_text_font.color }};
+}
+
+/* GDPR */
+
+form .legal-consent-container,
+form .legal-consent-container span,
+form .legal-consent-container p,
+form .legal-consent-container .hs-richtext,
+form .legal-consent-container .hs-richtext p {
+  {{ form_gdpr_text_font.style }};
+  color: {{ form_gdpr_text_font.color }};
+  font-size: {{ form_gdpr_text_font.size ~ form_gdpr_text_font.size_unit }};
+}
+
+/* Submit button */
+
+form input[type=submit],
+form .hs-button,
+form .hs-button.primary {
+  {{ filled_btn_dark_border }}
+  {{ filled_btn_dark_font.style }};
+  {{ btn_spacing }}
+  border-radius: {{ btn_corner_radius }};
+  font-size: {{ btn_font_size }};
+  line-height: {{ btn_line_height }};
+  text-transform: {{ btn_text_transform }};
+  background: {{ filled_btn_dark_bg_color.css }};
+  color: {{ filled_btn_dark_font.color }};
+}
+
+form input[type=submit]:hover,
+form .hs-button:hover,
+form .hs-button.primary:hover {
+  {{ filled_btn_dark_hover_border }}
+  {{ filled_btn_dark_hover_font.style }};
+  background: {{ filled_btn_dark_hover_bg_color.css }};
+  color: {{ filled_btn_dark_hover_font.color }};
+}
+
+body form input[type=submit]:active,
+body form .hs-button:active{
+  {{ filled_btn_dark_active_border }}
+  {{ filled_btn_dark_active_font.style }};
+  background: {{ filled_btn_dark_active_bg_color.css }};
+  color: {{ filled_btn_dark_active_font.color }};
+}
+
+body form input[type=submit]:focus,
+body form .hs-button:focus {
+  {{ filled_btn_dark_focus_border }}
+  {{ filled_btn_dark_focus_font.style }};
+  background: {{ filled_btn_dark_focus_bg_color.css }};
+  color: {{ filled_btn_dark_focus_font.color }};
+  outline-color: {{ filled_btn_focus_outline_color }};
+}
+
+.hs-form__alerts__list-item--error,
+.hs-error-msgs .hs-main-font-element,
+.hs-error-msg{
+  {{ form_error_msg_spacing }}
+  {{ form_error_msg_font.style }};
+  color: {{ form_error_msg_font.color }};
+  font-size: {{ form_error_msg_font.size ~ form_error_msg_font.size_unit }};
+  letter-spacing: {{ form_error_msg_letter_spacing ~ 'px'}};
+  line-height: {{ form_error_msg_line_height ~ 'px' }};
+  text-transform: {{ form_error_msg_text_transform }};
+}
+
+.error,
+.hs-input.invalid.error {
+  border: 1px solid {{ form_error_msg_border }} ;
+}
+
+.hs-form .hs-input[type="radio"]:checked:before,
+.hs-form .hs-input[type=checkbox]:checked {
+  background: {{ theme.color_font_setting.global_colors.primary.color }};
+}
+
+.hs-form .hs-input[type="radio"]:checked {
+  border-color: {{ theme.color_font_setting.global_colors.primary.color }};
+}
+
+.hs-form .hs-input[type=checkbox]:checked {
+  border: 1px solid {{ theme.color_font_setting.global_colors.primary.color }};
+}
+
+/* Passowrd Reset Input Field */
+.membership-reset-password__form form .hs-form-field:first-of-type {
+    margin-bottom: 0;
+}
+
+{###########################################################################}
+{#############################   6. Tables   ###############################}
+{###########################################################################}
+
+/* Table */
+
+table {
+  {{ table_border }}
+}
+
+/* Table cells */
+
+td {
+  background-color: {{ table_body_bg_color }};
+}
+
+th,
+td {
+  {{ table_border }}
+  {{ table_spacing }};
+  color: {{ table_body_font_color }};
+}
+
+/* Table header */
+
+thead th,
+thead td {
+  background-color: {{ table_header_bg_color }};
+  color: {{ table_header_font_color }};
+}
+
+/* Table footer */
+
+tfoot th,
+tfoot td {
+  background-color: {{ table_footer_bg_color }};
+  color: {{ table_footer_font_color }};
+}
+
+{###########################################################################}
+{###########################   7. Site header   ############################}
+{###########################################################################}
+
+/* Header container */
+
+.ac-header-wrap,
+.ac-menu-toggler-wrap.toggle--open,
+.ac-header__menu-wrap,
+.ac-header {
+  background: rgba({{ header_bg_color|convert_rgb }},{{ header_bg_opacity/100 }});
+}
+
+.ac-header__top {
+  background: {{ header_top_bar_bg_color }};
+}
+
+.ac-header__bottom {
+  background: {{ header_bottom_bar_bg_color }};
+}
+
+/* Menu items */
+.ac-header-wrap .menu__link,
+.ac-lang-switcher__label--current,
+.lang_switcher_link {
+  {{ header_menu_font.style }};
+  font-size: {{ header_menu_font_mb ~ 'px' }};
+  line-height: {{ header_menu_line_height_mb ~ 'px' }};
+  text-transform: {{ header_menu_text_transform }};
+}
+
+/* Menu items - top level */
+
+.ac-header-wrap .menu__item--depth-1 > .menu__link:not(.ac-button),
+.ac-header-wrap .menu__link,
+.ac-lang-switcher__label--current,
+.lang_switcher_link {
+  color: {{ header_menu_font.color }};
+}
+
+.ac-header-wrap .menu__submenu .menu__item .menu__child-toggle-icon {
+  border-bottom-color: {{ header_menu_font.color }};
+  border-right-color: {{ header_menu_font.color }};
+}
+
+.ac-header-wrap .menu__item--depth-1:hover >.menu__child-toggle .menu__child-toggle-icon,
+.ac-header-wrap .menu__item--depth-1:focus >.menu__child-toggle .menu__child-toggle-icon {
+  border-bottom-color: {{ header_menu_hover_font.color }};
+  border-right-color: {{ header_menu_hover_font.color }};
+}
+
+.ac-header-wrap .menu__item--depth-1:hover > .menu__link,
+.ac-header-wrap .menu__item--depth-1:focus > .menu__link {
+  {{ header_menu_hover_font.style }};
+  color: {{ header_menu_hover_font.color }};
+}
+
+.ac-header-wrap .menu__item--depth-1 > .menu__link:active,
+.ac-header-wrap .menu__item--depth-1 > .menu__link.menu__link--active-link {
+  {{ header_menu_active_font.style }};
+  color: {{ header_menu_active_font.color }};
+}
+
+/* Menu items - submenus */
+
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item .menu__link,
+.ac-header-wrap .hs-menu-item a {
+  color: {{ header_dropdown_menu_font_color }};
+}
+
+.ac-header-wrap .menu__item--depth-1>.menu__child-toggle .menu__child-toggle-icon {
+  border-bottom-color: {{ header_menu_font.color }};
+  border-right-color:  {{ header_menu_font.color }};
+}
+
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item .menu__child-toggle-icon {
+  border-bottom-color: {{ header_dropdown_menu_font_color }};
+  border-right-color: {{ header_dropdown_menu_font_color }};
+}
+
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:hover .menu__child-toggle-icon,
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:focus .menu__child-toggle-icon {
+  border-bottom-color: {{ header_dropdown_menu_hover_font_color }};
+  border-right-color: {{ header_dropdown_menu_hover_font_color }};
+}
+
+.header__menu-submenu .header__menu-link:hover,
+.header__menu-submenu .header__menu-link:focus,
+.ac-header-wrap .hs-menu-item a:hover,
+.ac-header-wrap .hs-menu-item a:focus,
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:hover > .menu__link,
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:focus > .menu__link {
+  {{ header_menu_hover_font.style }};
+  color: {{ header_dropdown_menu_hover_font_color }};
+}
+
+.ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item .menu__link.menu__link--active-link {
+  color: {{ header_dropdown_menu_active_font_color }};
+  background-color: {{ header_dropdown_menu_hover_bg_color }};
+}
+
+/* Language switcher */
+
+.ac-header-wrap .header__language-switcher-label-current {
+  {{ header_language_switcher_font.style }};
+  color: {{ header_language_switcher_font.color }};
+  font-size: {{ header_language_switcher_font_mb ~ 'px' }};
+  line-height: {{ header_language_switcher_line_height_mb ~ 'px' }};
+  text-transform: {{ header_language_switcher_text_transform }};
+}
+
+.ac-header-wrap .ac-lang-switcher:hover .header__language-switcher-label-current,
+.ac-header-wrap .ac-lang-switcher:focus .header__language-switcher-label-current {
+  {{ header_language_switcher_hover_font.style }};
+  color: {{ header_language_switcher_hover_font.color }};
+}
+
+/* Language switcher - submenu */
+
+.ac-header-wrap .ac-lang-switcher .lang_list_class {
+  background-color: {{ header_bg_color }};
+}
+
+.ac-header-wrap .ac-lang-switcher .lang_list_class a:not(.ac-button) {
+  {{ header_language_switcher_font.style }};
+  color:{{ header_dropdown_menu_font_color }};
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.ac-header-wrap .ac-lang-switcher .lang_list_class a:hover,
+.ac-header-wrap .ac-lang-switcher .lang_list_class a:focus {
+  background-color: {{ header_dropdown_menu_hover_bg_color }};
+  color: {{ header_dropdown_menu_hover_font_color }};
+}
+
+.ac-header-wrap .ac-lang-switcher .lang_list_class a:active {
+  background-color: {{ header_bg_color }};
+  color: {{ header_dropdown_menu_active_font_color }};
+}
+
+@media only screen and (min-width: 768px) {
+  .ac-header-wrap .menu .menu__wrapper .menu__submenu {
+    background-color: {{ header_dropdown_menu_bg_color }};
+  }
+
+  .header__menu-submenu .header__menu-item:hover,
+  .header__menu-submenu .header__menu-item:focus,
+  .ac-header-wrap .hs-menu-item a:hover,
+  .ac-header-wrap .hs-menu-item a:focus,
+  .ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:hover > .menu__link,
+  .ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:focus > .menu__link {
+    background-color: {{ header_dropdown_menu_hover_bg_color }};
+  }
+
+  .ac-header-wrap .menu__link {
+    font-size: {{ header_menu_font.size ~ header_menu_font.size_unit }};
+    line-height: {{ header_menu_line_height ~ 'px' }};
+  }
+
+  .ac-header-wrap .menu__item--depth-1>.menu__child-toggle .menu__child-toggle-icon {
+    border-bottom-color: {{ header_menu_font.color }};
+    border-right-color:  {{ header_menu_font.color }};
+  }
+
+  .ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item .menu__child-toggle-icon {
+    border-bottom-color: {{ header_dropdown_menu_font_color }};
+    border-right-color: {{ header_dropdown_menu_font_color }};
+  }
+
+  .ac-header-wrap .menu .menu__wrapper .menu__submenu .menu__item:hover .menu__child-toggle-icon {
+    border-bottom-color: {{ header_dropdown_menu_hover_font_color }};
+    border-right-color: {{ header_dropdown_menu_hover_font_color }};
+  }
+
+  .ac-header-wrap .header__language-switcher-label-current {
+    font-size: {{ header_language_switcher_font.size ~ header_language_switcher_font.size_unit }};
+    line-height: {{ header_language_switcher_line_height ~ 'px' }};
+  }
+
+  .ac-header-wrap .ac-lang-switcher .lang_list_class a:not(.ac-button) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .ac-header-wrap .menu__item--depth-1:after, .ac-header-wrap .menu__item--depth-1:before {
+    background-color: {{ primary_color }};
+  }
+}
+
+{###########################################################################}
+{###########################   8. Site footer   ############################}
+{###########################################################################}
+
+/* Footer Background  */
+
+.footer {
+  background: rgba({{ footer_bg_color|convert_rgb }},{{ footer_bg_opacity/100 }});
+}
+
+.ac-footer__copyright {
+  border-color: rgba({{ accent_color|convert_rgb }},0.16);
+}
+
+/* Footer Heading */
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6 {
+  {{ footer_heading_font.style }};
+  color: {{ footer_heading_font.color }};
+  font-size: {{ footer_heading_font_size_mb ~ 'px' }};
+  line-height: {{ footer_heading_line_height_mb ~ 'px' }};
+  text-transform: {{ footer_heading_transform }};
+}
+
+/* Footer text */
+
+.footer p,
+.footer li:not(.menu__item),
+.footer blockquote,
+.footer a:not(.menu__link),
+.footer span:not(.menu__link),
+.footer span
+.footer a:not(.menu__link),
+.ac-footer-copyright span,
+.ac-footer-copyright .ac-footer-copyright__links a {
+  {{ footer_text_font.style }};
+  color: {{ footer_text_font.color }};
+  font-size: {{ footer_text_font_size_mb ~ 'px' }};
+  line-height: {{ footer_text_line_height_mb ~ 'px' }};
+  text-transform: {{ footer_text_transform }};
+}
+
+/* Footer menu */
+
+.footer nav a,
+.footer .menu__link {
+  {{ footer_menu_font.style }};
+  color: {{ footer_menu_font.color }};
+  font-size: {{ footer_menu_font_size_mb ~ 'px' }};
+  line-height: {{ footer_menu_line_height_mb ~ 'px'}};
+  text-transform: {{ footer_menu_text_transform }};
+}
+
+.footer nav a:hover,
+.footer nav a:focus,
+.footer .menu__link:hover,
+.footer .menu__link:focus {
+  color: {{ footer_menu_hover_color }};
+}
+
+.footer nav a:active,
+.footer .menu__link:active {
+  color: {{ footer_menu_hover_color }};
+}
+
+.footer nav .active > a,
+.footer .menu__link .active > a {
+  color: {{ footer_menu_hover_color }};
+}
+
+@media only screen and (min-width: 768px) {
+  .footer h1,
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer h5,
+  .footer h6 {
+    font-size: {{ footer_heading_font.size ~ 'px' }};
+    line-height: {{ footer_heading_line_height ~ 'px' }};
+  }
+
+  .footer p,
+  .footer li:not(.menu__item),
+  .footer blockquote,
+  .footer a:not(.menu__link),
+  .footer span:not(.menu__link),
+  .footer span
+  .footer a:not(.menu__link),
+  .ac-footer-copyright span,
+  .ac-footer-copyright .ac-footer-copyright__links a {
+    font-size: {{ footer_text_font.size ~ 'px' }};
+    line-height: {{ footer_text_line_height ~ 'px' }};
+  }
+
+  .footer nav a,
+  .footer .menu__link {
+    font-size: {{ footer_menu_font.size ~ 'px' }};
+    line-height: {{ footer_menu_line_height ~ 'px'}};
+  }
+}
+
+{###########################################################################}
+{##############################   9. Blog   ################################}
+{###########################################################################}
+
+.ac-blog__banner-topic {
+  color: {{ primary_color }};
+}
+
+.ac-circle {
+  background-color: {{ primary_color }} !important;
+}
+
+.ac-blog__action-tag .ac-button svg path {
+  stroke: {{ primary_color }};
+}
+
+.blog-post__social-sharing .social-links__icon svg path {
+  fill: {{ primary_color }};
+}
+
+.ac-blog-layout__columns--count:hover .ac-blog-list__img-tag-link,
+body .ac-blog__listing:hover .ac-blog-list__img-tag-link {
+  background-color: {{ primary_color }};
+}
+
+.blog-post {
+  max-width: {{ theme.blog_setting.blog_post.blog_content.container_width.max_width ~ 'px' }};
+}
+
+.blog-post__body,
+.blog-post__body p {
+  font-size: {{ theme.blog_setting.blog_post.blog_content.paragraph.mobile.font_size ~ 'px' }};
+  letter-spacing: {{ theme.blog_setting.blog_post.blog_content.paragraph.mobile.letter_spacing ~ 'px' }};
+  line-height: {{ theme.blog_setting.blog_post.blog_content.paragraph.mobile.line_height ~ 'px' }};
+}
+
+@media only screen and (min-width: 768px) { 
+  .blog-post__body,
+  .blog-post__body p {
+    font-size: {{ theme.blog_setting.blog_post.blog_content.paragraph.tablet.font_size ~ 'px' }};
+    letter-spacing: {{ theme.blog_setting.blog_post.blog_content.paragraph.tablet.letter_spacing ~ 'px' }};
+    line-height: {{ theme.blog_setting.blog_post.blog_content.paragraph.tablet.line_height ~ 'px' }};
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .blog-post__body,
+  .blog-post__body p {
+    font-size: {{ theme.blog_setting.blog_post.blog_content.paragraph.desktop.font_size ~ 'px' }};
+    letter-spacing: {{ theme.blog_setting.blog_post.blog_content.paragraph.desktop.letter_spacing ~ 'px' }};
+    line-height: {{ theme.blog_setting.blog_post.blog_content.paragraph.desktop.line_height ~ 'px' }};
+  }
+}
+
+
+{###########################################################################}
+{##########################   10. System pages   ###########################}
+{###########################################################################}
+.search-results-wrap .hs-search-results__listing li a {
+  color: {{ heading_color }};
+}
+
+.search-results-wrap .hs-search-results__listing li a:hover {
+  color: {{ primary_color }};
+}
+
+.search-results-wrap .hs-search-results__pagination a {
+  {{ outlined_btn_light_font.style }};
+  color: {{ primary_color }};
+  font-size: {{ btn_font_size }};
+  line-height: {{ btn_line_height }};
+  text-transform: {{ btn_text_transform }};
+}
+
+.backup-unsubscribe input[type=email] {
+  {{ form_input_border }}
+  {{ form_input_font.style }};
+  background-color: {{ form_input_bg_color }};
+  border-radius: {{ form_input_corner_radius }};
+  color: {{ form_input_font.color }};
+  font-size: {{ form_input_font.size ~ 'px' }} !important;
+}
+
+{###########################################################################}
+{############################   11. Modules   ##############################}
+{###########################################################################}
+
+.ac-team .ac-team__card-col-img img,
+.ac-blog-list__featured-image img,
+.ac-portfolio-grid__item-img img,
+.ac-video-popup__image--overlay,
+.blog-related-posts__post img,
+.ac-blog-list__img-tag-link,
+.ac-listing-grid__image img,
+.ac-video-popup-wrapper img,
+.ac-gallery-grid__item img,
+.ac-blog-grid__img img,
+.ac-portfolio__link a,
+.ac-banner__image img,
+.ac-image img {
+  border-radius: {{ image_border_radius ~ 'px' }};
+}
+
+.ac-team .ac-team__card-col .ac-team__card-col-content,
+.search-results-wrap .hs-search-results__listing li,
+.ac-partner--slider .ac-partner__item,
+.ac-blog-layout__columns--count,
+.ac-listing-card--items-info,
+.ac-blog-list__img-tag-link,
+.ac-listing-grid__content,
+.blog-related-posts__post,
+.ac-sidebar__widget--one,
+.ac-listing--items-info,
+.ac-team__card-col-wrap,
+.ac-blog-grid__column,
+.ac-listing__tag,
+.ac-icon-box__col,
+.ac-notice__card,
+.ac-cta-section,
+.ac-pricing-card,
+.ac-subscribe,
+.ac-git {
+  border-radius: {{ base_border_radius ~  'px' }};
+}

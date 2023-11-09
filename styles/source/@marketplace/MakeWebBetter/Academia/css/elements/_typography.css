@@ -1,0 +1,235 @@
+body {
+  color: #53535B;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  word-break: break-word;
+}
+
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  word-break: break-all;
+}
+
+/****************************************/
+/*              Paragraphs             */
+/****************************************/
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/****************************************/
+/*              Anchors             */
+/****************************************/
+a {
+  color: #6E41E2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
+/****************************************/
+/*              Headings             */
+/****************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0E1133;
+  font-weight: 700; 
+  margin: 0 0 20px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 84px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+h4 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+/****************************************/
+/*              Lists             */
+/****************************************/
+ul,
+ol {
+  margin: 0 0 1.5rem;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0;
+}
+
+.no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li::marker {
+  color: {{ theme.color_font_setting.global_colors.primary.color }};
+}
+
+/****************************************/
+/*             Code blocks             */
+/****************************************/
+code {
+  vertical-align: bottom;
+}
+
+/****************************************/
+/*              Blockquotes             */
+/****************************************/
+blockquote {
+  border: 0;
+  border-radius: 16px;
+  margin: 0 auto 2.5rem;
+  max-width: 767px;
+  position: relative;
+  background: {{ theme.color_font_setting.global_colors.accent_color.color }};
+  padding: 45px;
+  z-index: 0;
+}
+
+blockquote,
+blockquote p {
+  color: {{ theme.color_font_setting.global_colors.heading_color.color }};
+}
+
+blockquote:before {
+  background-image: url({{get_asset_url('../../images/icons/blockquote.svg')}});
+  content: "";
+  display: block;
+  height: 41px;
+  left: 6px;
+  position: absolute;
+  top: 22px;
+  width: 50px;
+  z-index: -1;
+}
+
+
+/****************************************/
+/*        Horizontal rules           */
+/****************************************/
+hr {
+  background-color: #CCC;
+  border: none;
+  color: #CCC;
+  height: 1px;
+}
+
+/****************************************/
+/*      Subscripts and superscripts     */
+/****************************************/
+sup,
+sub {
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/****************************************/
+/*            Focus styles             */
+/****************************************/
+:focus {
+  outline: auto;
+  outline-color: #00ff00;
+}
+
+.disable-focus-styles :focus {
+  outline: none;
+}
+
+/****************************************/
+/*         Media Queries             */
+/****************************************/
+@media only screen and (max-width: 767px) {
+  body, html {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  
+  h4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  h5 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  h6 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+

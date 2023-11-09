@@ -1,0 +1,445 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Gallery
+screenshotPath: ../images/template-previews/gallery.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--gallery'
+%}
+
+{# Gallery Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_image'
+        },
+        banner_content= {
+         'subtitle': 'Gallery',
+         'content': '<h1>Our Campus at Glance</h1>'
+        },
+        breadcrumb={
+          "breadcrumb" : {
+            "current" : {
+              "current_page" : "Gallery"
+            },
+            "parent" : [ {
+              "parent_name" : "Home",
+              "parent_page_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "https://www.hubspot.com/",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ]
+          }
+        },
+        button_breadcrumb_choice = {
+          'select_actions': 'breadcrumb'
+        },
+        style = {
+          'background_image' : {
+            'image': {
+              'src': get_asset_url('../images/multipurpose/banner-eleven.jpg'),
+              'alt': 'Banner Image'
+            }
+          },
+          "max_width" : {
+            "enable" : true,
+            "value": 450
+          },
+          "breadcrumb" : {
+            "overwrite_color" : true
+          },
+          "content_color" : {
+            "heading" : {
+              "enable_heading_color" : true
+            },
+            "subtitle" : {
+              "overwrite_style" : true
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Gallery Banner #}
+
+{# Gallery Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "100px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="Gallery"
+      %}
+        {% module_attribute "content" %}
+          <h2>Our World at glance</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 30,
+          "height_mobile_" : 30,
+          "height_tablet_" : 30
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 30,
+          "height_mobile_" : 30,
+          "height_tablet_" : 30
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/portfolio-tabs",
+        offset=0,
+        width=12,
+        portfolio=[ {
+          "image_field" : {
+            "alt" : "Girl",
+            "height" : 632,
+            "loading" : "lazy",
+            "max_height" : 632,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/img-slider-three.jpg'),
+            "width" : 400
+          },
+          "item_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : true,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "items_class" : "*,audi"
+        }, {
+          "image_field" : {
+            "alt" : "Orientation",
+            "height" : 300,
+            "loading" : "lazy",
+            "max_height" : 300,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/img-slider-one.jpg'),
+            "width" : 400
+          },
+          "item_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : true,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "items_class" : "*,lab"
+        }, {
+          "image_field" : {
+            "alt" : "Set",
+            "height" : 632,
+            "loading" : "lazy",
+            "max_height" : 632,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/img-slider-four.jpg'),
+            "width" : 400
+          },
+          "item_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : true,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "items_class" : "*,cafe"
+        }, {
+          "image_field" : {
+            "alt" : "Seminar",
+            "height" : 300,
+            "loading" : "lazy",
+            "max_height" : 300,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/img-slider-two.jpg'),
+            "width" : 400
+          },
+          "item_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : true,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "items_class" : "*,ground"
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+
+{% dnd_section
+  background_color="rgba(243, 244, 248, 1)",
+  padding={
+    "default" : {
+      "bottom" : "100px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/portfolio-tabs",
+        offset=0,
+        width=12,
+        gallery_grid=[ {
+          "select_images" : [ {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-three.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-six.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-four.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-two.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-five.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-one.jpg'),
+              "width" : 400
+            }
+          } ]
+        }, {
+          "select_images" : [ {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-two.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-one.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-six.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-two.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/multipurpose/gallery-four.jpg'),
+              "width" : 400
+            }
+          }, {
+            "image_field_1" : {
+              "alt" : "Gallery",
+              "height" : 300,
+              "loading" : "lazy",
+              "max_height" : 300,
+              "max_width" : 400,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/multipurpose/gallery-three.jpg'),
+              "width" : 400
+            }
+          } ]
+        } ],
+        layout_choices={
+          "select_layout" : "image_slider"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{# End of Gallery Section #}
+
+{% end_dnd_area %}
+{% endblock body %}

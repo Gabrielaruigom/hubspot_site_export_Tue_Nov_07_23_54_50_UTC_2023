@@ -1,0 +1,1202 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: About Us College
+screenshotPath: ../images/template-previews/about-us-one.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--about-us-one'
+%}
+
+{# About Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_image'
+        },
+        banner_content= {
+         'subtitle': 'About us',
+         'content': '<h1><span style=\"color: #ffffff;\">Knowledge for all</span></h1>'
+        },
+        button_breadcrumb_choice = {
+          'select_actions': 'breadcrumb'
+        },
+        
+        style = {
+          'background_image' : {
+            'image': {
+              'src': get_asset_url('../images/multipurpose/banner-four.jpg'),
+              'alt': 'Banner Image'
+            }
+          },
+          "max_width" : {
+            "enable" : true,
+            "value": 450
+          }
+        }
+        
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of About Banner #}
+
+{# Two Column Content Section #}
+{% include_dnd_partial path='../sections/two-column-img-text.html' %}
+{# End Of Two Column Content #}
+
+{# Partner Section #}
+{% dnd_section
+  background_color="rgba(243, 244, 248, 1)",
+  padding={
+    "default" : {
+      "bottom" : "80px",
+      "top" : "80px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/our-partners",
+        offset=0,
+        width=12,
+        layout_choice={
+          "select_layout" : "listing"
+        },
+        partner_content=[ {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Goodfirms",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 270,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/multipurpose/goodfirms.png'),
+            "width" : 270
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.goodfirms.co/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Crowd Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 142,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/crowd.png'),
+            "width" : 142
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.goodfirms.co/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Capterra Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 175,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/capterra.png'),
+            "width" : 175
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.capterra.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Trustpilot Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 162,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/trustpilot.png'),
+            "width" : 162
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.trustpilot.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "content" : "<p>AI is a branch of computer science which is concerned with making machines capable of performing tasks that require human intelligence.</p>",
+          "logo" : {
+            "alt" : "Hubspot Partner",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 137,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/hubspot.png'),
+            "width" : 137
+          },
+          "partner_logo_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.hubspot.com/",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ],
+        show_content=false
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Partner Section #}
+
+{# Testimonial Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "100px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="Testimonials"
+      %}
+        {% module_attribute "content" %}
+          <h2>Better Education Starts here</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/testimonials",
+        offset=0,
+        width=12,
+        hide_show_quotes=false,
+        testimonials_content=[ {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-four.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-three.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-one.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "client_information" : "<h5>Brooklyn Simmons</h5>\n<p>Director</p>",
+          "content" : "<p>I highly recommend the products and services provided by this organization. I never feel alone in my journey while working with them. You can undoubtedly initiate with them.</p>",
+          "image" : {
+            "alt" : "Brooklyn Customer",
+            "height" : 188,
+            "loading" : "lazy",
+            "max_height" : 188,
+            "max_width" : 188,
+            "src" : get_asset_url('../images/multipurpose/testimonial-two.png'),
+            "width" : 188
+          },
+          "social_media" : [ {
+            "social_icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "Twitter Square",
+              "type" : "REGULAR",
+              "unicode" : "f081"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.twitter.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "social_icon" : {
+              "name" : "YouTube Square",
+              "type" : "REGULAR",
+              "unicode" : "f431"
+            },
+            "social_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.youtube.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End Of Testimonial Section #}
+
+{# Counter Section#}
+{% dnd_section
+  background_color={{ theme.color_font_setting.global_colors.primary.color }}, 
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row
+      padding={
+        "default" : {
+          "bottom" : "30px",
+          "left" : "0px",
+          "right" : "0px",
+          "top" : "0px"
+        },
+        "mobile" : {
+          "bottom" : "20px",
+          "left" : "0px",
+          "right" : "0px",
+          "top" : "0px"
+        }
+      }
+    %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true,
+            "value" : 760
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle=""
+      %}
+        {% module_attribute "content" %}
+          <h2><span style="color: #ffffff;">Some Interesting Facts</span></h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/counter",
+        offset=0,
+        width=12,
+        counter_repeater = [ {
+          'image' : {
+            'src' : get_asset_url('../images/icons/clock-white.svg'),
+            'alt': 'Clock Icon',
+          },
+          'counter_value': '100',
+          'counter_text' : 'working Hours'
+          },
+          {
+          'image' : {
+            'src' : get_asset_url('../images/icons/users.svg'),
+            'alt': 'Clock Icon',
+          },
+          'counter_value': '150',
+          'counter_text' : 'Happy Customers'
+          },
+          {
+          'image' : {
+            'src' : get_asset_url('../images/icons/presentation-chart-white.svg'),
+            'alt': 'Clock Icon',
+          },
+          'counter_value': '100',
+          'counter_text' : 'Projects Finished'
+          }
+        ],
+        style = {
+          'counter_font': {
+            'value' : {
+              'desktop': {
+                'overwrite': true,
+                'counter_value_font_desktop_': {
+                  color: "#ffffff"
+                }
+              }
+            },
+           'text': {
+            'value' : {
+              'desktop': {
+                'overwrite': true,
+                 'counter_text_font_desktop_': {
+                    color: "#ffffff"
+                  }
+                }
+              }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+{# End of Counter Section #}
+
+{# Team Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "100px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title-content",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment_choice" : "center"
+          },
+          "max_width" : {
+            "enable" : true
+          },
+          "subtitle" : {
+            "overwrite_style" : true
+          }
+        },
+        subtitle="Our Best Team"
+      %}
+        {% module_attribute "content" %}
+          <h2>Our Teachers</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 20,
+          "height_mobile_" : 20,
+          "height_tablet_" : 20
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/our-team",
+        offset=0,
+        width=12,
+        slider_settings={
+          "enable_slider_dots" : true,
+          "enable_slider_navigations" : true,
+          "items_on_desktop" : 3
+        },
+        team_member=[ {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 403,
+            "loading" : "lazy",
+            "max_height" : 403,
+            "max_width" : 375,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-one.jpg'),
+            "width" : 375
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 405,
+            "loading" : "lazy",
+            "max_height" : 405,
+            "max_width" : 376,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-four.jpg'),
+            "width" : 376
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 406,
+            "loading" : "lazy",
+            "max_height" : 406,
+            "max_width" : 378,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-five.jpg'),
+            "width" : 378
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 405,
+            "loading" : "lazy",
+            "max_height" : 405,
+            "max_width" : 376,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-three.jpg'),
+            "width" : 376
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        }, {
+          "designation" : "UX/UI Designer",
+          "details_page" : {
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubspot.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "enable_social_links" : true,
+          "image" : {
+            "alt" : "Team Member",
+            "height" : 406,
+            "loading" : "lazy",
+            "max_height" : 406,
+            "max_width" : 378,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/multipurpose/member-two.jpg'),
+            "width" : 378
+          },
+          "members_name" : "Cameron Williamson",
+          "social_icons" : [ {
+            "icon" : {
+              "name" : "Facebook Square",
+              "type" : "REGULAR",
+              "unicode" : "f082"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.facebook.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "Instagram Square",
+              "type" : "REGULAR",
+              "unicode" : "e055"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.instagram.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          }, {
+            "icon" : {
+              "name" : "LinkedIn",
+              "type" : "REGULAR",
+              "unicode" : "f08c"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.linkedin.com/",
+                "type" : "EXTERNAL"
+              }
+            }
+          } ]
+        } ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End Team Section #}
+
+{# Spacer Section #}
+{% dnd_section
+   padding={
+    "default" : {
+      "bottom" : "0",
+      "top" : "0",
+      "left": "0",
+      "right": "0"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px",
+      "left": "0",
+      "right": "0"
+    }
+  }
+%}
+{% dnd_column %}
+{% dnd_row %}
+{% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 80,
+          "height_mobile_" : 60,
+          "height_tablet_" : 40
+        }
+      %}
+      {% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Spacer Section #}
+
+{# Call to Action Section #}
+{% include_dnd_partial path='../sections/call-to-action.html' %}
+{# End of Call to Action Content #}
+
+{# Spacer Section #}
+{% dnd_section
+   padding={
+    "default" : {
+      "bottom" : "0",
+      "top" : "0",
+      "left": "0",
+      "right": "0"
+    },
+    "mobile" : {
+      "bottom" : "50px",
+      "top" : "50px",
+      "left": "0",
+      "right": "0"
+    }
+  }
+%}
+{% dnd_column %}
+{% dnd_row %}
+{% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 80,
+          "height_mobile_" : 60,
+          "height_tablet_" : 40
+        }
+      %}
+      {% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Spacer Section #}
+{% end_dnd_area %}
+
+{% endblock body %}

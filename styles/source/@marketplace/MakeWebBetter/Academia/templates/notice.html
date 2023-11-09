@@ -1,0 +1,234 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Notice
+screenshotPath: ../images/template-previews/notice.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'dnd_area'
+  label='Main section',
+  class='body-container body-container--notice'
+%}
+
+{# Career Banner #}
+{% dnd_section
+  full_width=true,
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      },
+      "mobile" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/banner-layouts",
+        offset=0,
+        width=12,
+        banner_layouts_choice={
+          'banner_layouts' : 'background_color'
+        },
+        banner_content= {
+         'subtitle': 'Notice',
+         'content': '<h1>Get the latest updates</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo nec felis at pellentesque. Sed amet dolor penatibus sed at posuere justo, lacinia neque.</p>',
+        },
+        style = {
+          'banner_content_alignment': {
+            'banner_content_alignment_desktop_': {
+              'alignment_choice': 'center'
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Notice Banner #}
+
+{# Notice Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "40px",
+      "left" : "20px",
+      "right" : "20px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "left" : "20px",
+      "right" : "20px"
+    }
+  }
+%}
+  {% dnd_module
+    path="../modules/notice",
+    offset=0,
+    width=12,
+    notice_card=[ {
+      "date" : 1646283600000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Exams",
+      "title" : "Results are declared for MCA 2021 Batch"
+    }, {
+      "date" : 1644469200000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Students",
+      "title" : "New Courses are available : React, Angular, Java, etc"
+    }, {
+      "date" : 1646370000000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Teachers",
+      "title" : "Syllabus is updated on Digital Marketing"
+    }, {
+      "date" : 1644296400000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Students",
+      "title" : "New Books are available for issuing in the library"
+    }, {
+      "date" : 1641531600000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Exams",
+      "title" : "New Cafeteria is open near the library building"
+    }, {
+      "date" : 1646456400000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Exams",
+      "title" : "College WiFi Password has been updated"
+    }, {
+      "date" : 1647316800000,
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras amet fames cras pretium consectetur. Enim quam volutpat orci, natoque id nunc volutpat.</p>",
+      "link" : {
+        "detail_page" : "https://www.hubspot.com/",
+        "text" : "Read More"
+      },
+      "tag" : "Students",
+      "title" : "Results are declared for BCA 2021 Batch"
+    } ]
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+{# End Of Notice Section #}
+
+{# Spacer Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 60,
+          "height_mobile_" : 40,
+          "height_tablet_" : 60
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Spacer Section #}
+
+{# Get In Touch Section #}
+{% include_dnd_partial path='../sections/get-in-touch.html' %}
+{# End Of Get In Touch #}
+
+{# Spacer Section #}
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer",
+        offset=0,
+        width=12,
+        style={
+          "height_desktop_" : 80,
+          "height_mobile_" : 40,
+          "height_tablet_" : 80
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+{# End of Spacer Section #}
+
+{% end_dnd_area %}
+{% endblock body %}
